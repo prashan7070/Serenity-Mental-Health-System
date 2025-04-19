@@ -1,6 +1,8 @@
 module lk.ijse.gdse.serenity_mental_health_system {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
+    requires org.hibernate.orm.core;
 
 
     opens lk.ijse.gdse to javafx.fxml;

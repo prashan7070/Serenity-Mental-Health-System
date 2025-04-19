@@ -1,0 +1,78 @@
+/* login-style.css */
+
+.main-background {
+    -fx-background-color: #F5F7FA;
+}
+
+.top-curve {
+    -fx-background-color: linear-gradient(to right bottom, #3F5C94, #7E92B5);
+    -fx-background-radius: 0 0 30 30;
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 5);
+}
+
+.text-field {
+    -fx-background-color: #F5F7FA;
+    -fx-background-radius: 5;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+
+.text-field:focused {
+    -fx-border-color: #3F5C94;
+    -fx-border-width: 1.5;
+}
+
+.login-button {
+    -fx-background-color: linear-gradient(to right, #3F5C94, #7E92B5);
+    -fx-background-radius: 25;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: linear-gradient(to right, #324a7d, #6a7da0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 3);
+}
+
+.radio-button .radio {
+    -fx-border-width: 1;
+    -fx-border-color: #3F5C94;
+    -fx-background-color: white;
+    -fx-border-radius: 15;
+    -fx-padding: 3;
+}
+
+.radio-button:selected .radio .dot {
+    -fx-background-color: #3F5C94;
+    -fx-background-insets: 0;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: #7E92B5;
+    -fx-border-radius: 3;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #3F5C94;
+}
+
+.check-box:selected .box {
+    -fx-background-color: white;
+}
+
+.hyperlink {
+    -fx-border-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #3F5C94;
+    -fx-underline: true;
+}
