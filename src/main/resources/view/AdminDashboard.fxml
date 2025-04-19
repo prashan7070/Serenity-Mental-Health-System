@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" stylesheets="@../css/Admin-Dashboard-style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.controller.AdminDashBoardController">
+
+    <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <top>
+            <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header-bar">
+                <padding>
+                    <Insets bottom="15" left="20" right="20" top="15" />
+                </padding>
+                <Label styleClass="header-title" text="Healthcare Management System" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button styleClass="header-button" text="Logout" />
+            </HBox>
+        </top>
+
+        <left>
+            <VBox prefWidth="250" styleClass="sidebar">
+                <VBox alignment="CENTER" styleClass="profile-section">
+                    <Label styleClass="profile-name" text="Admin User" />
+                    <Label styleClass="profile-email" text="admin@healthcare.com" />
+                </VBox>
+
+                <Separator />
+
+                <VBox spacing="5" styleClass="nav-buttons-container">
+                    <Button styleClass="nav-button, active-nav-button" text="Dashboard">
+                        <graphic>
+                            <Region styleClass="dashboard-icon" />
+                        </graphic>
+                    </Button>
+
+                    <Button fx:id="userManageBtn" onAction="#handleUserManage" styleClass="nav-button" text="User Management">
+                        <graphic>
+                            <Region styleClass="user-icon" />
+                        </graphic>
+                    </Button>
+
+                    <Button fx:id="patientManageBtn" onAction="#handlePatientManage" styleClass="nav-button" text="Patient Management">
+                        <graphic>
+                            <Region styleClass="patient-icon" />
+                        </graphic>
+                    </Button>
+
+                    <Button fx:id="therapistManageBtn" onAction="#handleTherapistManage" styleClass="nav-button" text="Therapist Management">
+                        <graphic>
+                            <Region styleClass="therapist-icon" />
+                        </graphic>
+                    </Button>
+
+                    <Button fx:id="programManageBtn" onAction="#handleProgramManage" styleClass="nav-button" text="Program Management">
+                        <graphic>
+                            <Region styleClass="program-icon" />
+                        </graphic>
+                    </Button>
+
+                    <Button fx:id="sessionManageBtn" onAction="#handleSessionManage" styleClass="nav-button" text="Session Management">
+                        <graphic>
+                            <Region styleClass="session-icon" />
+                        </graphic>
+                    </Button>
+
+                    <Button fx:id="reportsBtn" onAction="#handleReports" styleClass="nav-button" text="Reports &amp; Analytics">
+                        <graphic>
+                            <Region styleClass="reports-icon" />
+                        </graphic>
+                    </Button>
+                </VBox>
+
+                <Region VBox.vgrow="ALWAYS" />
+
+                <VBox styleClass="sidebar-footer">
+                    <Button fx:id="settingsBtn" onAction="#handleSettings" styleClass="settings-button" text="Settings">
+                        <graphic>
+                            <Region styleClass="settings-icon" />
+                        </graphic>
+                    </Button>
+                </VBox>
+            </VBox>
+        </left>
+
+        <center>
+            <StackPane styleClass="main-content">
+                <VBox spacing="20">
+                    <padding>
+                        <Insets bottom="20" left="30" right="30" top="20" />
+                    </padding>
+
+                    <HBox styleClass="dashboard-header">
+                        <Label styleClass="section-title" text="Dashboard Overview" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <HBox alignment="CENTER_RIGHT" spacing="10">
+                            <Button fx:id="refreshBtn" onAction="#handleRefresh" styleClass="refresh-button" text="Refresh" />
+                            <ComboBox fx:id="timeRangeCombo" promptText="This Week" />
+                        </HBox>
+                    </HBox>
+
+                    <HBox spacing="20" styleClass="stat-cards">
+                        <VBox styleClass="stat-card, users-card">
+                            <Label styleClass="stat-label" text="Total Users" />
+                            <Label fx:id="userCountLabel" styleClass="stat-value" text="243" />
+                            <Label fx:id="userTrendLabel" styleClass="stat-trend" text="↑ 12% from last week" />
+                        </VBox>
+
+                        <VBox styleClass="stat-card, patients-card">
+                            <Label styleClass="stat-label" text="Patients" />
+                            <Label fx:id="patientCountLabel" styleClass="stat-value" text="1,523" />
+                            <Label fx:id="patientTrendLabel" styleClass="stat-trend" text="↑ 5% from last week" />
+                        </VBox>
+
+                        <VBox styleClass="stat-card, therapists-card">
+                            <Label styleClass="stat-label" text="Therapists" />
+                            <Label fx:id="therapistCountLabel" styleClass="stat-value" text="48" />
+                            <Label fx:id="therapistTrendLabel" styleClass="stat-trend" text="↑ 2 new this week" />
+                        </VBox>
+
+                        <VBox styleClass="stat-card, sessions-card">
+                            <Label styleClass="stat-label" text="Active Sessions" />
+                            <Label fx:id="sessionCountLabel" styleClass="stat-value" text="85" />
+                            <Label fx:id="sessionTrendLabel" styleClass="stat-trend" text="↓ 3% from last week" />
+                        </VBox>
+                    </HBox>
+
+                    <TabPane fx:id="contentTabPane" styleClass="content-tabs">
+                        <Tab closable="false" text="Recent Activity">
+                            <VBox>
+                                <TableView fx:id="recentActivityTable" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="timeColumn" prefWidth="150" text="Time" />
+                                        <TableColumn fx:id="userColumn" prefWidth="150" text="User" />
+                                        <TableColumn fx:id="actionColumn" prefWidth="300" text="Action" />
+                                        <TableColumn fx:id="detailsColumn" prefWidth="200" text="Details" />
+                                    </columns>
+                                </TableView>
+                            </VBox>
+                        </Tab>
+                        <Tab closable="false" text="Upcoming Sessions">
+                            <VBox>
+                                <TableView fx:id="upcomingSessionsTable" VBox.vgrow="ALWAYS">
+                                    <columns>
+                                        <TableColumn fx:id="dateTimeColumn" prefWidth="150" text="Date/Time" />
+                                        <TableColumn fx:id="patientColumn" prefWidth="150" text="Patient" />
+                                        <TableColumn fx:id="therapistColumn" prefWidth="150" text="Therapist" />
+                                        <TableColumn fx:id="programColumn" prefWidth="150" text="Program" />
+                                        <TableColumn fx:id="statusColumn" prefWidth="100" text="Status" />
+                                    </columns>
+                                </TableView>
+                            </VBox>
+                        </Tab>
+                        <Tab closable="false" text="System Alerts">
+                            <VBox>
+                                <ListView fx:id="alertsListView" VBox.vgrow="ALWAYS" />
+                            </VBox>
+                        </Tab>
+                    </TabPane>
+                </VBox>
+            </StackPane>
+        </center>
+    </BorderPane>
+
+
+</AnchorPane>

@@ -1,0 +1,253 @@
+/* Main Content Styles */
+.main-content {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Header Styles */
+.content-header {
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 12 0;
+    -fx-border-color: transparent transparent #e0e0e0 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.section-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Search Area */
+.search-field {
+    -fx-pref-height: 32px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #cccccc;
+    -fx-padding: 0 10 0 10;
+}
+
+.search-filter {
+    -fx-pref-height: 32px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #cccccc;
+}
+
+.search-button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-height: 32px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.search-button:hover {
+    -fx-background-color: #0069d9;
+}
+
+/* Tab Pane Styles */
+.tab-pane {
+    -fx-tab-min-width: 120px;
+}
+
+.tab-pane .tab {
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 3 15 3 15;
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: #007bff;
+}
+
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #e8e8e8;
+}
+
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #555555;
+    -fx-font-size: 14px;
+    -fx-font-weight: normal;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.tab-pane .tab-content-area {
+    -fx-padding: 15 0 0 0;
+}
+
+/* Form Container */
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #e0e0e0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+    -fx-padding: 15px;
+}
+
+.form-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-padding: 0 0 5 0;
+    -fx-border-color: transparent transparent #e0e0e0 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.field-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #555555;
+}
+
+.auto-id-label {
+    -fx-text-fill: #888888;
+    -fx-font-style: italic;
+}
+
+.form-field {
+    -fx-pref-height: 30px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #cccccc;
+    -fx-padding: 0 10 0 10;
+}
+
+.form-text-area {
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #cccccc;
+    -fx-padding: 5;
+    -fx-font-size: 12px;
+}
+
+/* Table Styles */
+.table-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #e0e0e0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+    -fx-fixed-cell-size: 35px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f8f8;
+    -fx-padding: 8px;
+    -fx-border-color: transparent transparent #e0e0e0 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .column-header-background .label {
+    -fx-text-fill: #555555;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: transparent transparent #f0f0f0 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #e2f0ff;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f0f7ff;
+}
+
+/* Buttons */
+.action-buttons {
+    -fx-padding: 10 0 0 0;
+    -fx-border-color: #e0e0e0 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.primary-button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 32px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #218838;
+}
+
+.secondary-button {
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 32px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #5a6268;
+}
+
+.export-button, .refresh-button {
+    -fx-background-color: #17a2b8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-height: 30px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.export-button:hover, .refresh-button:hover {
+    -fx-background-color: #138496;
+}
+
+.add-record-button {
+    -fx-background-color: #28a745;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-height: 30px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.add-record-button:hover {
+    -fx-background-color: #218838;
+}
+
+.patient-selector {
+    -fx-pref-height: 30px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #cccccc;
+}
+
+/* Footer Info */
+.info-label, .status-label {
+    -fx-text-fill: #555555;
+    -fx-font-weight: bold;
+}
+
+.count-label, .status-value {
+    -fx-text-fill: #007bff;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.status-bar {
+    -fx-padding: 5 0 0 0;
+    -fx-border-color: #e0e0e0 transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}

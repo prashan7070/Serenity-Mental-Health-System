@@ -1,0 +1,323 @@
+
+    /* Integrated CSS */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f7fa;
+
+    /* Custom colors */
+    -primary-color: #3f51b5;
+    -primary-light: #7986cb;
+    -primary-dark: #303f9f;
+    -accent-color: #ff4081;
+    -text-primary: #212121;
+    -text-secondary: #757575;
+    -divider-color: #BDBDBD;
+    -chart-blue: #2196F3;
+    -chart-green: #4CAF50;
+    -chart-orange: #FF9800;
+    -chart-purple: #9C27B0;
+    -error-color: #f44336;
+}
+
+/* Header Bar */
+.header-bar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 2);
+    -fx-min-height: 70px;
+}
+
+.header-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -primary-dark;
+}
+
+.header-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -primary-color;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 8 15;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.header-button:hover {
+    -fx-background-color: rgba(63, 81, 181, 0.1);
+}
+
+/* Sidebar */
+.sidebar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 5, 0);
+}
+
+.profile-section {
+    -fx-padding: 25px 15px;
+}
+
+.profile-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-primary;
+}
+
+.profile-email {
+    -fx-font-size: 13px;
+    -fx-text-fill: -text-secondary;
+}
+
+.nav-buttons-container {
+    -fx-padding: 15px 10px;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-secondary;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12px 15px;
+    -fx-font-size: 15px;
+    -fx-cursor: hand;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-min-width: 230px;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(63, 81, 181, 0.05);
+    -fx-text-fill: -primary-color;
+}
+
+.active-nav-button {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: white;
+}
+
+.active-nav-button:hover {
+    -fx-background-color: -primary-dark;
+    -fx-text-fill: white;
+}
+
+.sidebar-footer {
+    -fx-padding: 15px;
+    -fx-border-color: transparent transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.settings-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -text-secondary;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px;
+}
+
+/* Main Content */
+.main-content {
+    -fx-background-color: #f5f7fa;
+}
+
+.section-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-primary;
+}
+
+.dashboard-header {
+    -fx-padding: 0 0 15 0;
+}
+
+.refresh-button {
+    -fx-background-color: white;
+    -fx-text-fill: -primary-color;
+    -fx-border-color: -divider-color;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px 15px;
+}
+
+.refresh-button:hover {
+    -fx-background-color: #f9f9f9;
+}
+
+/* Stat Cards */
+.stat-cards {
+    -fx-padding: 10px 0;
+}
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
+    -fx-min-width: 200px;
+    -fx-max-width: 220px;
+    -fx-spacing: 5;
+}
+
+.stat-label {
+    -fx-text-fill: -text-secondary;
+    -fx-font-size: 14px;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -text-primary;
+}
+
+.stat-trend {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4CAF50;
+}
+
+.users-card {
+    -fx-border-color: transparent transparent transparent -chart-blue;
+    -fx-border-width: 0 0 0 5px;
+}
+
+.patients-card {
+    -fx-border-color: transparent transparent transparent -chart-green;
+    -fx-border-width: 0 0 0 5px;
+}
+
+.therapists-card {
+    -fx-border-color: transparent transparent transparent -chart-purple;
+    -fx-border-width: 0 0 0 5px;
+}
+
+.sessions-card {
+    -fx-border-color: transparent transparent transparent -chart-orange;
+    -fx-border-width: 0 0 0 5px;
+}
+
+/* Content Tabs */
+.content-tabs {
+    -fx-background-color: transparent;
+}
+
+.content-tabs .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.content-tabs .tab {
+    -fx-background-color: white;
+    -fx-background-radius: 4px 4px 0 0;
+    -fx-padding: 10px 15px;
+}
+
+.content-tabs .tab:selected {
+    -fx-background-color: white;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.content-tabs .tab-content-area {
+    -fx-background-color: white;
+    -fx-background-radius: 0 4px 4px 4px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0, 0, 1);
+    -fx-padding: 15px;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -divider-color transparent;
+    -fx-padding: 10px 5px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -text-secondary;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -divider-color transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5px 0;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: rgba(0, 0, 0, 0.02);
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(63, 81, 181, 0.05);
+}
+
+/* Icons using shape regions */
+.dashboard-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z";
+    -fx-background-color: currentColor;
+}
+
+.user-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z";
+    -fx-background-color: currentColor;
+}
+
+.patient-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z";
+    -fx-background-color: currentColor;
+}
+
+.therapist-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z";
+    -fx-background-color: currentColor;
+}
+
+.program-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm-2 14l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z";
+    -fx-background-color: currentColor;
+}
+
+.session-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z";
+    -fx-background-color: currentColor;
+}
+
+.reports-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z";
+    -fx-background-color: currentColor;
+}
+
+.settings-icon {
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+    -fx-shape: "M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z";
+    -fx-background-color: currentColor;
+}
