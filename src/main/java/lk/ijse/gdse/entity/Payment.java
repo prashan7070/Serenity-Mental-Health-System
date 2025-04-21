@@ -6,22 +6,34 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "payment")
 
-public class Payment {
+public class Payment implements SuperEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "payment_id")
-    private String paymentId;
+    private Long paymentId;
 
     private String paymentMethod;
-    private String date;
+
+    @Column(name = "registered_date")
+    private String registeredDate;
+
+    @Column(name = "Registration_Fee")
     private double amount;
+
+    @Column(name = "Session_Fee")
+    private double sessionFee;
+
+    @Column(name = "payment_date")
+    private LocalDate paymentDate;
+
     private String status;
 
     @ManyToOne
@@ -32,6 +44,9 @@ public class Payment {
     @JoinColumn(name = "programme_id")
     private Therapy_Programme therapyProgramme;
 
+    @OneToOne
+    @JoinColumn(name = "session_Id")
+    private Therapy_Session therapySession;
 
 
 }

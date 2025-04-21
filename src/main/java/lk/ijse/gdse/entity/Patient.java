@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.xml.namespace.QName;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,14 +19,19 @@ public class Patient implements SuperEntity{
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "Patient_Id")
-
-        private String id;
+        private Long id;
         private String name;
         private int age;
         private String address;
         private String phone;
         private String email;
         private String medicalHistory;
+
+        @OneToMany(mappedBy = "patient")
+        private List<Registration> registrations;
+
+        @OneToMany(mappedBy = "patient")
+        private List<Therapy_Session> therapySessions;
 
 
 }
