@@ -2,13 +2,20 @@ package lk.ijse.gdse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+import lk.ijse.gdse.bo.custom.BOFactory;
+import lk.ijse.gdse.bo.custom.BOTypes;
+import lk.ijse.gdse.bo.custom.LoginBO;
+import lk.ijse.gdse.dto.UserDTO;
+
+import java.io.IOException;
+import java.util.Optional;
 
 public class LoginViewController {
 
@@ -37,6 +44,12 @@ public class LoginViewController {
     private TextField usernameField;
 
     @FXML
+    private AnchorPane loginAnchor;
+
+    LoginBO loginBO = BOFactory.getInstance().getBO(BOTypes.LOGIN);
+
+
+    @FXML
     void handleForgotPassword(ActionEvent event) {
 
     }
@@ -44,7 +57,33 @@ public class LoginViewController {
     @FXML
     void handleLogin(ActionEvent event) {
 
+        String username = usernameField.getText();
+        String password = passwordField.getText();
 
+        try {
+
+            Optional<UserDTO> userDTO = loginBO.validateLogin(username,password);
+
+
+            if (userDTO.isPresent()){
+                Stage stage = (Stage) loginAnchor.getScene().getWindow();
+                stage.close();
+
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/AdminDashboard.fxml"));
+                Parent dashboardRoot = fxmlLoader.load();
+                AdminDashBoardController adminDashBoardController = fxmlLoader.getController();
+
+                Stage dashboardStage = new Stage();
+                Image image = new Image(getClass().getResourceAsStream("/images/favican.png"));
+                dashboardStage.getIcons().add(image);
+                dashboardStage.setScene(new Scene(dashboardRoot));
+                dashboardStage.show();
+            }
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }

@@ -1,9 +1,6 @@
 package lk.ijse.gdse.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +14,11 @@ import java.time.LocalDate;
 @Table(name = "Therapy_Details")
 
 public class Therapy_Details implements SuperEntity{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Therapy_detail_id")
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "Programme_Id")

@@ -2,15 +2,16 @@ package lk.ijse.gdse.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 
-public class AdminDashBoardController {
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AdminDashBoardController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> actionColumn;
@@ -103,7 +104,20 @@ public class AdminDashBoardController {
     private Label userTrendLabel;
 
     @FXML
+    private AnchorPane contentPanelAnchor;
+
+    @FXML
+    private Button dashboardBtn;
+
+    @FXML
+    void handleHome(ActionEvent event) {
+
+    }
+
+    @FXML
     void handlePatientManage(ActionEvent event) {
+
+        navigateTo("/view/PatientManage.fxml");
 
     }
 
@@ -140,6 +154,35 @@ public class AdminDashBoardController {
     @FXML
     void handleUserManage(ActionEvent event) {
 
+        navigateTo("/view/UserManage.fxml");
+
+
     }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+
+    }
+
+    public void navigateTo(String fxmlPath){
+
+        try {
+            contentPanelAnchor.getChildren().clear();
+            AnchorPane contentPanel = FXMLLoader.load(getClass().getResource(fxmlPath));
+            contentPanel.prefWidthProperty().bind(contentPanelAnchor.widthProperty());
+            contentPanel.prefHeightProperty().bind(contentPanelAnchor.heightProperty());
+            contentPanelAnchor.getChildren().add(contentPanel);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Fail to load page!").show();
+
+        }
+
+    }
+
 
 }

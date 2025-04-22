@@ -1,8 +1,16 @@
 package lk.ijse.gdse.dto;
 
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+
 public class UserDTO {
 
-    private String id;
+    private Long id;
     private String name;
     private String username;
     private String password;

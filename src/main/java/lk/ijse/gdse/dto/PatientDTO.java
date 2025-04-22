@@ -1,5 +1,13 @@
 package lk.ijse.gdse.dto;
 
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+
 public class PatientDTO {
 
     private Long id;

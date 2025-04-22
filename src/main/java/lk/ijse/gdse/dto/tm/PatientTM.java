@@ -1,5 +1,13 @@
 package lk.ijse.gdse.dto.tm;
 
+import lombok.*;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+
 public class PatientTM {
 
     private Long id;
