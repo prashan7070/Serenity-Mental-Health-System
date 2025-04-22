@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 public class FactoryConfiguration {
 
     private static FactoryConfiguration factoryConfiguration;
-    private SessionFactory sessionFactory;
+    private final SessionFactory sessionFactory;
 
     private FactoryConfiguration(){
 

@@ -15,7 +15,7 @@ import java.time.LocalTime;
 @Entity
 @Table(name = "Therapy_Session")
 
-public class Therapy_Session {
+public class Therapy_Session implements SuperEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

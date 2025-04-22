@@ -1,0 +1,7 @@
+package lk.ijse.gdse.dao.custom;
+
+import lk.ijse.gdse.dao.CrudDAO;
+import lk.ijse.gdse.entity.User;
+
+public interface UserManageDAO extends CrudDAO<User,String> {
+}

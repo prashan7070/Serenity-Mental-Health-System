@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Data
 @Table(name = "Therapy_Details")
 
-public class Therapy_Details {
+public class Therapy_Details implements SuperEntity{
 
     @ManyToOne
     @JoinColumn(name = "Programme_Id")
