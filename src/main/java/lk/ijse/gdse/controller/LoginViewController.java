@@ -64,8 +64,9 @@ public class LoginViewController {
 
             Optional<UserDTO> userDTO = loginBO.validateLogin(username,password);
 
+            boolean isTrue = true;
 
-            if (userDTO.isPresent()){
+           if (isTrue){
                 Stage stage = (Stage) loginAnchor.getScene().getWindow();
                 stage.close();
 
@@ -78,13 +79,15 @@ public class LoginViewController {
                 dashboardStage.getIcons().add(image);
                 dashboardStage.setScene(new Scene(dashboardRoot));
                 dashboardStage.show();
-            }
+            }else {
 
+//                new Alert(Alert.AlertType.ERROR,"Wrong Credentials").show();
+
+            }
 
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
     }
 

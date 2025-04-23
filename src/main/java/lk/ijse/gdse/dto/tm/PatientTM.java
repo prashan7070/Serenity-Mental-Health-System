@@ -10,7 +10,7 @@ import lombok.*;
 
 public class PatientTM {
 
-    private Long id;
+    private String id;
     private String name;
     private int age;
     private String address;

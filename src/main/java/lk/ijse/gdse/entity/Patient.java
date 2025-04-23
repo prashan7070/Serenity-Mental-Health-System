@@ -17,9 +17,8 @@ import java.util.List;
 public class Patient implements SuperEntity{
 
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name = "Patient_Id")
-        private Long id;
+        private String id;
         private String name;
         private int age;
         private String address;

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,8 +18,7 @@ import java.time.LocalDate;
 public class Payment implements SuperEntity{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long paymentId;
+    private String paymentId;
 
     private String paymentMethod;
 
@@ -44,9 +44,10 @@ public class Payment implements SuperEntity{
     @JoinColumn(name = "programme_id")
     private Therapy_Programme therapyProgramme;
 
-    @OneToOne
+
+    @ManyToOne
     @JoinColumn(name = "session_Id")
-    private Therapy_Session therapySession;
+    private Therapy_Session therapySessions;
 
 
 }

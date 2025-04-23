@@ -27,8 +27,18 @@ public class UserManageDAOImpl implements UserManageDAO {
 
         return Optional.of(user);
 
-
     }
 
+
+    @Override
+    public String getLastId() {
+
+        Session session = factoryConfiguration.getSession();
+
+        String lastId = session.createQuery("SELECT u.id FROM User u ORDER BY u.id DESC", String.class).setMaxResults(1).uniqueResult();
+
+        return lastId;
+
+    }
 
 }

@@ -16,9 +16,8 @@ import java.util.List;
 public class Therapy_Programme implements SuperEntity{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Programme_Id")
-    private Long programmeId;
+    private String programmeId;
 
     private String programmeName;
     private int duration;

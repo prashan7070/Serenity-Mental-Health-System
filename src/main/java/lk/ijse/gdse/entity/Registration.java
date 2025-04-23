@@ -17,8 +17,7 @@ import java.time.LocalDate;
 public class Registration implements SuperEntity{
 
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long registrationId;
+        private String registrationId;
 
         @ManyToOne
         @JoinColumn(name = "Patient_Id")

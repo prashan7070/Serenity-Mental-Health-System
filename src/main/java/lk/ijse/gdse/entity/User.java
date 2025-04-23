@@ -1,7 +1,10 @@
 package lk.ijse.gdse.entity;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,18 +14,17 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "User")
-
-public class User implements SuperEntity{
+public class User implements SuperEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_Id")
+    @Column(name = "User_Id")
+    private String id;
 
-    private Long id;
     private String name;
     private String username;
     private String password;
     private String email;
     private String role;
+
 
 }
